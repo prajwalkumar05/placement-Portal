@@ -1,27 +1,33 @@
 import React from "react";
+import Card from "./Card";
 
 const Hero = () => {
+  const arr = [
+    { logo: "image", id: "1", name: "value" },
+    { logo: "image", id: "1", name: "value" },
+    { logo: "image", id: "1", name: "value" },
+    { logo: "image", id: "1", name: "value" },
+    { logo: "image", id: "1", name: "value" },
+  ];
+
   return (
     <div>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+      <div className="  h-[45vh] bg-gradient-to-r from-cyan-700 to-blue-300">
+        <div className=" text-center text-neutral-content flex justify-center items-start pt-6">
+          <div className="max-w-md text-white">
+            <h1 className="mb-3 text-4xl font-bold">Hello prajwal,</h1>
+            <h1 className="mb-5 text-2xl font-medium">
+              Welcome To the Mishra Hotel{" "}
+            </h1>
+
             <button className="btn btn-primary">Get Started</button>
           </div>
         </div>
+      </div>
+      <div className="flex absolute top-[40%] left-[7%]">
+        {arr.map(() => {
+          return <Card />;
+        })}
       </div>
     </div>
   );
