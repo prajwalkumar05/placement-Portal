@@ -3,11 +3,11 @@ import Card from "./Card";
 
 const Hero = () => {
   const arr = [
-    { logo: "image", id: "1", name: "value" },
-    { logo: "image", id: "1", name: "value" },
-    { logo: "image", id: "1", name: "value" },
-    { logo: "image", id: "1", name: "value" },
-    { logo: "image", id: "1", name: "value" },
+    { logo: "image", id: "1", name: "Home",to:"Home" },
+    { logo: "image", id: "2", name: "jobs",to:"jobs" },
+    { logo: "image", id: "3", name: "result",to:"result" },
+    { logo: "image", id: "4", name: "setting",to:"setting" },
+    { logo: "image", id: "5", name: "rules",to:"rules" },
   ];
 
   return (
@@ -24,9 +24,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="flex absolute top-[40%] left-[7%]">
-        {arr.map(() => {
-          return <Card />;
+      <div className="sm:flex justify-center mt-[-130px] flex-wrap h-full ">
+        {arr.map((item,i) => {
+          return <Card {...item} key={i}  />;
         })}
       </div>
     </div>

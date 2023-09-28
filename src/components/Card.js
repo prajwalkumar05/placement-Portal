@@ -5,10 +5,11 @@ import two from '../assets/two.png'
 import third from '../assets/third.png'
 // import blue_coding from '../assets/blue_coding.png'
 
-const Card = () => {
+const Card = ({name,to}) => {
+  console.log(name)
   return (
-      <Link to="/hello">
-        <div className=" flex flex-col justify-center items-center   w-64 bg-white shadow-xl hover:scale-125 ">
+      <Link to={`/${to}`}>
+        <div className=" flex flex-col justify-center items-center w-64 bg-white shadow-xl hover:scale-110 hover:transition-all duration-500   ">
       <figure className="pt-5">
         <img
           src={third}
@@ -17,7 +18,7 @@ const Card = () => {
         />
       </figure>
       <div className="card-body items-center text-center text-black ">
-        <h2 className="card-title font-bold">Shoes!</h2>
+        <h2 className="card-title font-bold">{name}</h2>
       </div>
     </div>
       </Link>
