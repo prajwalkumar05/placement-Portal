@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Setting from "./pages/Setting";
 import Result from "./pages/Result";
 import Login from "./auth/Login";
+import CompanyDetails from "./pages/CompanyDetails";
 
 function App() {
   const Layout = () => {
@@ -45,6 +46,10 @@ function App() {
         {
           path: "/jobs",
           element: <Jobs />,
+        },
+        {
+          path: "/cd",
+          element: <CompanyDetails />,
         },
       ],
     },
