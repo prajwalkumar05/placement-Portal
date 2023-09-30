@@ -7,6 +7,7 @@ import Setting from "./pages/Setting";
 import Result from "./pages/Result";
 import Login from "./auth/Login";
 import CompanyDetails from "./pages/CompanyDetails";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const Layout = () => {
@@ -50,6 +51,10 @@ function App() {
         {
           path: "/cd",
           element: <CompanyDetails />,
+        },
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
         },
       ],
     },

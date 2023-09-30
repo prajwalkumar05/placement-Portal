@@ -1,5 +1,6 @@
 import React from "react";
 import third from '../assets/third.png'
+import { Link } from "react-router-dom";
 
 const Company = () => {
   return (
@@ -15,7 +16,7 @@ const Company = () => {
         <h2 className="card-title">Company:Infosys</h2>
         <p>Click the button to watch on Jetflix app.</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary mt-[-50px]">Watch</button>
+          <Link to='/cd' className="btn btn-primary mt-[-50px]">Watch</Link>
         </div>
       </div>
     </div>
