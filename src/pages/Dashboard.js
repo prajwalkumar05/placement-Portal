@@ -1,8 +1,22 @@
 import React from "react";
+import { useCollection } from "../hooks/useCollection";
+import useGetData from "../hooks/useGetData";
 
-const Dashboard = () => {
+const Dashboard = ({ uid }) => {
+  console.log(uid);
+
+  const { document } = useCollection("companys");
+  console.log(document && document.length);
+
+  const { result } = useGetData("users", uid);
+
+  if (!result) {
+    return <p>Loading</p>;
+  }
+  console.log(result);
+
   return (
-    <div className="stats shadow flex justify-center ml-32 my-24">
+    <div className="stats bg-white shadow flex justify-center mx-20 my-24">
       <div className="stat">
         <div className="stat-figure text-primary">
           <svg
@@ -20,11 +34,12 @@ const Dashboard = () => {
           </svg>
         </div>
         <div className="stat-title text-2xl">Total Companys</div>
-        <div className="stat-value text-primary">05</div>
-        
+        <div className="stat-value text-primary">
+          {document && document.length}
+        </div>
       </div>
 
-      <div className="stat">
+      {/* <div className="stat">
         <div className="stat-figure text-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,15 +57,13 @@ const Dashboard = () => {
         </div>
         <div className="stat-title">Eligible for Apply</div>
         <div className="stat-value text-secondary">4</div>
-        
-      </div>
+      </div> */}
 
       <div className="stat">
-        
-      <div className="stat-title text-2xl">Total Apply</div>
-        <div className="stat-value text-primary">03</div>
-        
-       
+        <div className="stat-title text-2xl">Total Apply</div>
+        <div className="stat-value text-primary">
+          {result && result.totalApply?.length}
+        </div>
       </div>
     </div>
   );

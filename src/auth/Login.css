@@ -1,0 +1,495 @@
+.section{
+    position: relative;
+   min-height: 100vh;
+    background: #ebeef6 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all .5s;
+    width: 100vw;
+    /* border: 1px solid red; */
+  
+   
+   
+}
+
+section .cLoginLogin{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+    /* border: 1px solid red; */
+    border-radius: 2px;
+    overflow: hidden;
+   
+
+}
+section .cLoginLogin .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: inherit;
+  
+    /* gap: 2px; */
+  
+
+}
+
+section .cLoginLogin .user .imgBx{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height:100% ;
+    transition: 0.5s;
+    border-radius: inherit;
+
+
+}
+
+section .cLoginLogin .user .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+   
+   
+    /* padding: 2px; */
+}
+
+
+section .cLoginLogin .user .formBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: all 0.5s;
+    border-radius: inherit;
+    /* border: 1px solid red; */
+  
+   
+
+}
+
+section .cLoginLogin .user .formBx .subtitle{
+    font-size: 10px;
+    font-weight: 400;
+   
+   max-width: 90%;
+    /* text-align: center; */
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 15px;
+}
+
+section .cLoginLogin .user .formBx .inputBox{
+    position: relative;
+  width: 100%;
+    /* border: 1px solid red; */
+    margin-top: 25px;
+ 
+
+}
+section .cLoginLogin .user .formBx .inputBox input{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #abb8c5;
+    border-radius: 2px;
+    outline: none;
+    color: #000;
+    font-size: 14px;
+    transition: .4s;
+    font-weight: 500;
+    min-width: 300px;
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 8px 12px;
+    pointer-events: none;
+    font-size: 12px;
+    letter-spacing: .5px;
+    font-weight: 400;
+    color: #abb8c5;
+    transition: all .4s;
+    font-weight: 400;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 11px;
+    padding: 0px 2px;
+    background-color: #fff;
+    color:#000d6b;
+
+
+}
+
+.inputBox input::placeholder{
+    font-size: 11px;
+    /* letter-spacing: .5px; */
+}
+section .cLoginLogin .user .formBx .inputBox input:focus{
+    
+    border: 1px solid #000d6b;
+    outline: 1px solid #000d6b;
+}
+
+
+section .cLoginLogin .user .formBx input[type="submit"],.button{
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 25px;
+    cursor: pointer;
+    letter-spacing: .5px;
+    background: #000d6b;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,.25);
+    border-radius: 2px;
+    font-weight: 300;
+    font-size: 12px;
+   
+
+
+}
+.special{
+    color: #000d6b;
+    text-shadow: 1px 5px 4px rgba(0,0,0,.1);
+}
+
+section .cLoginLogin .user .formBx .signup{
+    position: relative;
+    margin-top: 25px;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 600;
+  
+  
+
+
+}
+a{
+    color: #000d6b;
+    text-decoration: none;
+    padding: 2px 4px;
+    text-decoration: underline;
+}
+
+.span-cLoginLogin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin-top: 15px;
+
+}
+.span-cLoginLogin span{
+    width: 30% ;
+    height: .5px ;
+    background-color:#abb8c5 ;
+}
+
+.ruler-center{
+    font-size: 10px;
+    color: #abb8c5 ;
+    font-weight: 300;
+}
+.google-icon-cLoginLogin{
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;padding: 6px 6px;
+  margin: 0 auto;
+   margin-top: 10px;
+    box-shadow: 1px 1px 6px rgba(0,0,0,.15);
+    cursor: pointer;
+  
+   
+   
+
+}
+.google-icon-cLoginLogin img{
+    width:25px;
+    height: 25px;
+  margin: 0 auto;
+   
+
+}
+.signup{
+    text-align: center;
+}
+
+section .cLoginLogin .user .formBx .signupBx{
+    display: none;
+}
+
+section .cLoginLogin .signupBx{
+    pointer-events: none;
+}
+
+
+section .cLoginLogin .signupBx .formBx{
+    top: 100%;
+    /* opacity: 0; */
+    opacity: 0;
+    transition: all .5s;
+
+}
+section .cLoginLogin .signinBx .formBx{
+    top: 0;
+    transition: all .5s;
+   
+  
+  
+  
+
+}
+
+
+
+section .cLoginLogin .signupBx .imgBx{
+    top: -100%;
+    transition: .5s;
+    opacity: 0;
+  
+
+}
+
+section .cLoginLogin.active .signupBx .formBx{
+    top: 0;
+    opacity: 1;
+   
+  
+   
+
+}
+
+/* section .cLoginLogin.active .signinBx{
+    top: 0;
+} */
+
+
+section .cLoginLogin.active .signupBx .imgBx{
+    top: 0;
+    opacity: 1;
+  
+  
+
+}
+
+section .cLoginLogin.active .signupBx{
+    pointer-events: initial;
+  
+
+}
+section .cLoginLogin.active .signinBx .formBx{
+   
+   top: 100%;
+   opacity: 0;
+}
+
+
+
+
+
+
+section .cLoginLogin .signinBx .imgBx{
+    transition: .5s;
+  opacity: 1;
+    top: 0;
+
+  
+
+}
+
+
+
+
+section .cLoginLogin.active .signinBx .imgBx{
+    transition: all .5s;
+    top: -100%;
+    opacity: 0;
+}
+
+h1{
+    font-size: 30px;
+    line-height: 40px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+   
+}
+
+
+section .cLoginLogin.active .signinBx .imgBx{
+    top: 100%;
+
+
+}
+h2{
+    text-align: center;
+font-size: 30px;
+}
+
+.gradient{
+    width: 100%;
+    height: 100%;
+    /* background-image: url(../../assets/all-images/cars-img/nissan-offer.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.gradient .subtitle{
+    font-size: 10px;
+    color: #edf0f7;
+    font-weight: 200;
+    max-width: 60%;
+    margin-bottom: 10px;
+}
+
+
+.title{
+    color: #fff;
+    font-size: 50px;
+    max-width: 60%;
+    line-height: 60px;
+    text-transform: none;
+    text-shadow: 2px 4px 4px rgba(0,0,0,.2);
+
+}
+.author{
+    font-size: 10px;
+    color: #edf0f7;
+    letter-spacing: .5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.2);
+}
+
+
+
+
+
+@media (max-width:991px){
+    section .cLoginLogin{
+        max-width:400px ;
+
+    }
+    section .cLoginLogin .imgBx{
+        display: none;
+    }
+    section .cLoginLogin .user .formBx{
+        width: 100%;
+    }
+
+    section .cLoginLogin.active .signinBx .formBx{
+       top: -100%;
+    }
+    
+
+    h1,h2{
+        font-size: 26px;
+    }
+
+    section .cLoginLogin{
+        transform: translateY(-6%);
+    }
+   
+    section .cLoginLogin .user .formBx .inputBox input{
+        min-width: 280px;
+    }
+    
+
+   
+    
+}
+/* .inputBox .error{
+    border: 1px solid red;
+} */
+
+/*  
+section .cLoginLogin .user .formBx .inputBox {
+    outline: none;
+    border: 1px solid red;
+} */
+
+/* section .cLoginLogin .user .formBx .inputBox input{
+    outline: none;
+    border: 1px solid #edf0f7;
+}  */
+
+section .cLoginLogin .user .formBx .inputBox input{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #abb8c5;
+    border-radius: 2px;
+    outline: none;
+    color: #000;
+    font-size: 14px;
+    transition: .4s;
+    font-weight: 500;
+    min-width: 300px;
+}
+
+section .cLoginLogin .user .formBx .inputBox.error input{
+    outline: none ;
+    border: 1px solid red;
+}
+
+
+
+.inputBox input .error input{
+    border: none;
+}
+
+
+section .cLoginLogin .user .formBx .inputBox input:focus{
+    border: none; 
+ outline: none;
+   outline: 1px solid #000d6b;
+}
+
+.green{
+    border: 1px solid green;
+}
+.error-message{
+    margin: 0;
+    font-size: 10px;
+    padding: 2px 5px;
+  
+    color: red;
+    width: 100%;
+    /* border: 1px solid red; */
+    margin-top: 2px;
+
+
+}
+.button{
+    transition: all .3s ease;
+   
+}
+
+.button:hover{
+    transform: scale(1.02);
+    background-color:#000d6b ;
+}
+
+.button:disabled{
+    background-color:#5a5ff6 ;
+}

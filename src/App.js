@@ -1,66 +1,68 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Jobs from "./pages/Jobs";
+import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
+import Rootlayout from "./layout/Rootlayout";
+import CompanyCard from "./components/CompanyCard";
 import Home from "./pages/Home";
-import Setting from "./pages/Setting";
+import Jobs from "./pages/Jobs";
+import Hero from "./components/Hero";
 import Result from "./pages/Result";
+import Profile from "./pages/Profile";
+import Company from "./components/Company";
+import CompnayDetails from "./pages/CompanyDetails";
+import { useAuthContext } from "./hooks/useAuthContext";
 import Login from "./auth/Login";
-import CompanyDetails from "./pages/CompanyDetails";
-import Dashboard from "./pages/Dashboard";
+import Test from "./pages/Test";
+import Signup from "./auth/Signup";
+import PrivateRoutes from "./layout/PrivateRoutes";
+import { ToastContainer } from "react-toastify";
+import Resume from "./pages/Resume";
 
 function App() {
-  const Layout = () => {
+  const { user, authIsReady } = useAuthContext();
 
-    let user=false
+  console.log(user);
 
-    return (
-      <div>
-        {user ? <Login /> :<>
-          <Navbar />
-          <Hero />
-          <div className="mt-[20px] mx-28 border h-full">
-            <Outlet />
-          </div>
-        </>}
-      </div>
-    );
-  };
+  console.log(authIsReady);
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        {
-          path: "/home",
-          element: <Home />,
-        },
-        {
-          path: "/setting",
-          element: <Setting />,
-        },
-        {
-          path: "/result",
-          element: <Result />,
-        },
-        {
-          path: "/jobs",
-          element: <Jobs />,
-        },
-        {
-          path: "/cd",
-          element: <CompanyDetails />,
-        },
-        {
-          path: "/dashboard",
-          element: <Dashboard />,
-        },
-      ],
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+  return (
+    <div className="App">
+  
+      <Router>
+        <Routes>
+          <Route element={<PrivateRoutes />}>
+            {/* <Route path="/" element={<Hero {...user} />} /> */}
+            <Route path="/" element={authIsReady ? <Hero {...user} />: <Navigate to="/" /> } />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route
+              path="/profile"
+              element={authIsReady ? <Profile /> : <Navigate to="/login" />}
+            />
+            <Route path="/rules" element={<Result />} />
+            <Route path="/jobs/:id" element={<CompnayDetails />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="/resume" element={<Resume />} />
+          </Route>
+          <Route element={<Login />} path="/login" />
+          <Route element={<Signup />} path="/signup" />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
+// router and routes
+
 export default App;
+
+// {/* <Route path="/" element={<PrivateRoutes  />}>
+//         {/* <Route path="/" element={authIsReady ? <Hero /> : <Navigate to="/login" />} /> */}
+//         <Route path="/" element={<Hero {...user} /> } />
+//         <Route path="/login" element={ <Login />} />
+//          {/* <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} /> */}
+
+//         <Route path="/jobs" element={<Jobs />} />
+//         <Route path="/profile" element={authIsReady ? <Profile   /> : <Navigate to="/login" />} />
+//         <Route path="/rules" element={<Result />} />
+//         <Route path="/jobs/:id" element={<CompnayDetails />} />
+//         <Route path="/test" element={<Test />} />
+//         <Route path="/signup" element={ <Signup />} />
+//       </Route> */}
