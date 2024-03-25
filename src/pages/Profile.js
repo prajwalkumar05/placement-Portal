@@ -74,6 +74,7 @@ const Profile = () => {
                   </svg>
                 </span>
                 {registerNumber}
+                {}
               </p>
               <p className="text-gray-600 dark:text-gray-100 text-sm tracking-normal font-normal mb-8 text-center w-10/12">
                 {address}

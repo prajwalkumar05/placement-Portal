@@ -20,6 +20,7 @@ export const useSignup = () => {
 
   const notify = () => toast("Signup successfull");
 
+
   const navigate = useNavigate()
 
   const signup = async (email, password, displayName, profileImg,fullobj) => {
@@ -64,6 +65,9 @@ export const useSignup = () => {
         fatherName: fullobj.fatherName,
         motherName: fullobj.motherName,
         address: fullobj.address,
+        course:fullobj.course,
+        batch:fullobj.batch,
+        UserID:fullobj.UserID,
         totalApply:[],
         msg:[]
       }).catch((err) => {

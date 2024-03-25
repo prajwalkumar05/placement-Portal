@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useAuthContext } from "./useAuthContext";
 import { auth, db } from "../firebase/config";
+import { toast } from "react-toastify";
 
 export const useLogin = () => {
   const navigate = useNavigate();
@@ -13,6 +14,9 @@ export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch, user } = useAuthContext();
+
+  const notify = () => toast.success("Login successfull");
+  const loginError = () => toast.error("login Error");
 
   const login = async (email, password) => {
     console.log(email, password);
@@ -30,12 +34,14 @@ export const useLogin = () => {
 
       if (res.user) {
         console.log("true answer");
+        
+      notify()
         navigate("/");
       }
       // Set the "capital" field of the city 'DC'
      
 
-      
+
 
       // dispatch login action
       dispatch({ type: "LOGIN", payload: res.user });
@@ -45,7 +51,9 @@ export const useLogin = () => {
         setError(null);
       }
     } catch (err) {
+      
       if (!isCancelled) {
+        loginError()
         setError(err.message);
         setIsPending(false);
       }

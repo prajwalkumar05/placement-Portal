@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Rootlayout from "./layout/Rootlayout";
 import CompanyCard from "./components/CompanyCard";
 import Home from "./pages/Home";
@@ -25,12 +30,14 @@ function App() {
 
   return (
     <div className="App">
-  
       <Router>
         <Routes>
           <Route element={<PrivateRoutes />}>
             {/* <Route path="/" element={<Hero {...user} />} /> */}
-            <Route path="/" element={authIsReady ? <Hero {...user} />: <Navigate to="/" /> } />
+            <Route
+              path="/"
+              element={authIsReady ? <Hero {...user} /> : <Navigate to="/" />}
+            />
             <Route path="/jobs" element={<Jobs />} />
             <Route
               path="/profile"

@@ -47,6 +47,7 @@ function CompnayDetails() {
 
   const notify = () => toast("Apply Successfully");
 
+
   const {
     name,
     role,
@@ -207,7 +208,7 @@ function CompnayDetails() {
                   {date}
                 </h2>
                 {result && result.apply ? (
-                  <button disabled>Done</button>
+                  <button className="border py-2 px-10" disabled>Done</button>
                 ) : (
                   <button
                     onClick={handleSubmit}

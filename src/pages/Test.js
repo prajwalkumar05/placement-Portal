@@ -2,8 +2,35 @@
 import React, { useState } from 'react';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { useAuthContext } from '../hooks/useAuthContext';
+import { db } from '../firebase/config';
+import {
+  addDoc,
+  collection,
+  doc,
+  updateDoc,
+  onSnapshot,
+} from "firebase/firestore";
+import { useEffect } from 'react';
+
 
 const Test = () => {
+
+  const {user} = useAuthContext()
+
+  const [value,setValue] = useState(null)
+  console.log(value)
+  console.log(user)
+
+  useEffect(() => {
+    const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
+      console.log("Current data: ", doc.data());
+      setValue({ ...doc.data() });
+    });
+  },[])
+
+
+
   const [education, setEducation] = useState({
     university: '',
     degree: '',
@@ -46,6 +73,11 @@ const Test = () => {
       head: [['Section', 'Details']],
       body: [
         ['Name',"Prajwal Kumar"],
+        ['GmailID',value.gmailId],
+        ['Age',value.age],
+        ['FatherName',value.fatherName],
+        ['MotherName',value.motherName],
+        ['Address',value.address],
         ['Education', educationList.map((edu) => `${edu.university}, ${edu.degree} (${edu.graduationYear})`).join('\n')],
         ['Skills', skillsList.join(', ')],
         ['Achievements', achievementsList.join('\n')],
@@ -212,3 +244,22 @@ const Test = () => {
   
   export default Test;
   
+
+  // displayName,
+  //       online: true,
+  //       photoURL: downloadUrl,
+  //       name: fullobj.name,
+  //       age: fullobj.age,
+  //       gmailId: fullobj.gmailId,
+  //       registerNumber: fullobj.registerNumber,
+  //       tenthMarks: fullobj.tenthMarks,
+  //       pucMarks: fullobj.pucMarks,
+  //       degreeMarks: fullobj.degreeMarks,
+  //       fatherName: fullobj.fatherName,
+  //       motherName: fullobj.motherName,
+  //       address: fullobj.address,
+  //       course:fullobj.course,
+  //       batch:fullobj.batch,
+  //       UserID:fullobj.UserID,
+  //       totalApply:[],
+  //       msg:[]
